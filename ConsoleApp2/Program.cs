@@ -35,7 +35,9 @@ namespace ConsoleApp2
 
                 IPEndPoint endp = new IPEndPoint(IPAddress.Any, servPort);
 
+                byte[] recvPacket = client.Receive(ref endp);
 
+                Console.WriteLine("Received {0} bytes from {1}: {2}", recvPacket.Length, endp.Address, Encoding.ASCII.GetString(recvPacket));
 
 
             }
