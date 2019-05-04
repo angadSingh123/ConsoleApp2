@@ -32,7 +32,7 @@ namespace ConsoleApp2
                 client = new UdpClient();
 
                 client.Send(buffer, buffer.Length, server, servPort);
-
+                
                 IPEndPoint endp = new IPEndPoint(IPAddress.Any, servPort);
 
                 byte[] recvPacket = client.Receive(ref endp);
